@@ -14,7 +14,7 @@ BACKENDS = settings.AUTHENTICATION_BACKENDS
 STRATEGY = getattr(settings, setting_name('STRATEGY'),
                    'social.strategies.django_strategy.DjangoStrategy')
 STORAGE = getattr(settings, setting_name('STORAGE'),
-                  'social.apps.django_app.default.models.DjangoStorage')
+                  'social.apps.django_app.sa_default.models.DjangoStorage')
 Strategy = module_member(STRATEGY)
 Storage = module_member(STORAGE)
 

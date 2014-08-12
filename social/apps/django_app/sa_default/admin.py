@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib import admin
 
 from social.utils import setting_name
-from social.apps.django_app.default.models import UserSocialAuth, Nonce, \
+from social.apps.django_app.sa_default.models import UserSocialAuth, Nonce, \
                                                   Association
 
 

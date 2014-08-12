@@ -11,7 +11,7 @@ from social.storage.django_orm import DjangoUserMixin, \
                                       DjangoNonceMixin, \
                                       DjangoCodeMixin, \
                                       BaseDjangoStorage
-from social.apps.django_app.default.fields import JSONField
+from social.apps.django_app.sa_default.fields import JSONField
 
 
 USER_MODEL = getattr(settings, setting_name('USER_MODEL'), None) or \
