@@ -15,10 +15,13 @@ class GoClioOAuth2(BaseOAuth2):
 
     def get_user_details(self, response):
         """Return user details from GoClio account"""
-        import pdb;pdb.set_trace()
-        username = response['angellist_url'].split('/')[-1]
-        email = response.get('email', '')
-        fullname, first_name, last_name = self.get_user_names(response['name'])
+        account = response.get('account', {})
+        user = response.get('user', {})
+        username = user.get('id', None)
+        email = user.get('email', None)
+        first_name, last_name = (user.get('first_name', None), user.get('last_name', None))
+        fullname = '%s %s' % (first_name, last_name)
+        
         return {'username': username,
                 'fullname': fullname,
                 'first_name': first_name,
