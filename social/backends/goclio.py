@@ -17,6 +17,7 @@ class GoClioOAuth2(BaseOAuth2):
         """Return user details from GoClio account"""
         account = response.get('account', {})
         user = response.get('user', {})
+
         username = user.get('id', None)
         email = user.get('email', None)
         first_name, last_name = (user.get('first_name', None), user.get('last_name', None))
@@ -33,3 +34,6 @@ class GoClioOAuth2(BaseOAuth2):
         return self.get_json('https://app.goclio.com/api/v2/users/who_am_i', params={
             'access_token': access_token
         })
+
+    def get_user_id(self, details, response):
+        return response.get('user', {}).get('id')
