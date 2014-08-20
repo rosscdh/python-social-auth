@@ -27,7 +27,9 @@ class SocialAuthExceptionMiddleware(object):
             return
 
         if isinstance(exception, SocialAuthBaseException):
-            backend_name = strategy.backend.name
+            #import pdb;pdb.set_trace()
+            #backend_name = strategy.backend.name
+            backend_name = ''
             message = self.get_message(request, exception)
             url = self.get_redirect_uri(request, exception)
             try:
